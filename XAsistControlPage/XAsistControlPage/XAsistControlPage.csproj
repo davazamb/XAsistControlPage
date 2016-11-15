@@ -41,6 +41,7 @@
     <Compile Include="Model\Entities\Student.cs" />
     <Compile Include="Model\Entities\StudentDirectory.cs" />
     <Compile Include="Model\Services\StudentDirectoryService.cs" />
+    <Compile Include="ViewModel\StudentDirectoryVM.cs" />
     <Compile Include="ViewModel\StudentsVM.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
