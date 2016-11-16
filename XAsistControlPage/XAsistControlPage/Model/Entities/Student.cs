@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XAsistControlPage.Model.Entities
 {
-    public class Student
+    public class Student: ObservableBaseObject
     {
 
 
@@ -15,7 +15,7 @@ namespace XAsistControlPage.Model.Entities
         public string Name
         {
             get { return name; }
-            set { name = value; }
+            set { name = value; OnPropertyChanged(); }
         }
 
         private string lastName;
@@ -23,7 +23,7 @@ namespace XAsistControlPage.Model.Entities
         public string LastName
         {
             get { return lastName; }
-            set { lastName = value; }
+            set { lastName = value; OnPropertyChanged(); }
         }
 
         private string group;
@@ -31,7 +31,7 @@ namespace XAsistControlPage.Model.Entities
         public string Group
         {
             get { return group; }
-            set { group = value; }
+            set { group = value; OnPropertyChanged(); }
         }
 
         private string studentNumber;
@@ -39,7 +39,7 @@ namespace XAsistControlPage.Model.Entities
         public string StudentNumber
         {
             get { return studentNumber; }
-            set { studentNumber = value; }
+            set { studentNumber = value; OnPropertyChanged(); }
         }
 
         private double average;
@@ -47,7 +47,7 @@ namespace XAsistControlPage.Model.Entities
         public double Average
         {
             get { return average; }
-            set { average = value; }
+            set { average = value; OnPropertyChanged(); }
         }
 
     }

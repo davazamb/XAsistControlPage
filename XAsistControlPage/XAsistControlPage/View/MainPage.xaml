@@ -3,9 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XAsistControlPage"
              x:Class="XAsistControlPage.MainPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:AverageToColorConverter x:Key="MyColorCvt"></local:AverageToColorConverter>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+<StackLayout>
+  <Button Text="Cargar Directorio" Command="{Binding LoadDirectoryCommand}">    
+  </Button>
+  <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}">    
+  </ActivityIndicator>
+  <ListView ItemsSource="{Binding Students}" x:Name="lvStudents">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ImageCell TextColor="{Binding Average,Converter={StaticResource MyColorCvt}}" Text="{Binding Name}" Detail="{Binding Average}"></ImageCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</StackLayout>
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
 
 </ContentPage>

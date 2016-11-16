@@ -13,7 +13,7 @@ namespace XAsistControlPage
         {
             InitializeComponent();
 
-            MainPage = new XAsistControlPage.MainPage();
+            MainPage = new NavigationPage(new XAsistControlPage.MainPage());
         }
 
         protected override void OnStart()

@@ -10,7 +10,7 @@ using XAsistControlPage.Model.Services;
 
 namespace XAsistControlPage.ViewModel
 {
-    public class StudentDirectoryVM
+    public class StudentDirectoryVM: ObservableBaseObject
     {
         //Coleccion para mostrar el listado de estudiantes
         public ObservableCollection<Student> Students { get; set; }
@@ -19,7 +19,7 @@ namespace XAsistControlPage.ViewModel
         public bool IsBusy
         {
             get { return isBusy; }
-            set { isBusy = value; }
+            set { isBusy = value; OnPropertyChanged(); }
         }
         //LLamados Command
         public Command LoadDirectoryCommand { get; set; }
