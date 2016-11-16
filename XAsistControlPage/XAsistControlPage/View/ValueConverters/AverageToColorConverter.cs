@@ -10,7 +10,10 @@ namespace XAsistControlPage.View.ValueConverters
 {
     public class AverageToColorConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public AverageToColorConverter()
+        {
+        }
+            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double average = (double)value;
             return average < 60 ? Color.Red : Color.Blue;
