@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XAsistControlPage.Model.Entities;
+using XAsistControlPage.Storage.Interfaces;
 
 namespace XAsistControlPage.Storage
 {
@@ -21,9 +22,8 @@ namespace XAsistControlPage.Storage
         SQLiteConnection database;
         public DatabaseManager()
         {
-            database = DependencyService.Get<ISite>().GetConnection();
+            database = DependencyService.Get<ISQLite>().GetConnection();
             database.CreateTable<Student>();
-
         }
 
         public void SaveValue<T>(T value) where T : IKeyObject, new()

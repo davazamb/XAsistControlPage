@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XAsistControlPage.Storage;
 
 namespace XAsistControlPage.Model.Entities
 {
-    public class Student: ObservableBaseObject
+    public class Student: ObservableBaseObject,IKeyObject
     {
-
+        public string Key
+        {
+            get;
+            set;
+        }
 
         private string name;
 
